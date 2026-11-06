@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index, follow">
+<title>Coche en venta · Luxury Cars Huelva</title>
+<meta name="description" content="Coche de alta gama en venta en Luxury Cars Huelva.">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.crumbs{padding:28px 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.crumbs a:hover{color:var(--ink)}
+.crumbs span{margin:0 10px;color:var(--dim)}
+.detail>*{min-width:0}
+.detail{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:start}
+.gal .main{position:relative;aspect-ratio:4/3;background:var(--bg2);overflow:hidden}
+.gal .main img{width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.gal .main img.fade{opacity:0}
+.gal .nav-b{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid var(--line2);background:rgba(10,10,11,.55);backdrop-filter:blur(6px);cursor:pointer;display:grid;place-items:center;font-size:18px;transition:background .2s}
+.gal .nav-b:hover{background:rgba(10,10,11,.85)}
+.gal .prev{left:16px}.gal .next{right:16px}
+.gal .idx{position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.14em;background:rgba(10,10,11,.6);padding:4px 9px}
+.thumbs{display:flex;gap:8px;margin-top:8px;overflow-x:auto;scrollbar-width:none}
+.thumbs button{flex:none;width:112px;aspect-ratio:4/3;padding:0;border:1px solid transparent;background:var(--bg2);cursor:pointer;opacity:.5;transition:opacity .2s,border-color .2s}
+.thumbs button[aria-current=true]{opacity:1;border-color:var(--gold)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.info{position:sticky;top:100px}
+.info .eyebrow{margin-bottom:16px}
+.info h1{font-weight:300;font-size:clamp(32px,3.6vw,52px);text-transform:uppercase;letter-spacing:.02em;line-height:1.02;font-variation-settings:"wdth" 125}
+.info .ver{color:var(--mute);margin-top:12px;letter-spacing:.06em}
+.info .p{display:flex;align-items:baseline;gap:16px;margin:30px 0 8px;padding-top:28px;border-top:1px solid var(--line)}
+.info .p b{font-weight:300;font-size:clamp(34px,3.4vw,46px);font-variation-settings:"wdth" 112}
+.st{font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line2)}
+.st.stock{color:var(--ok);border-color:rgba(127,184,138,.4)}
+.st.reservado{color:var(--warn);border-color:rgba(217,166,90,.45)}
+.info .iva{font-size:13px;color:var(--mute)}
+.info .ctas{display:grid;gap:10px;margin-top:28px}
+.info .btn{width:100%;min-width:0;white-space:normal;padding:0 16px;letter-spacing:.16em}
+.info .from{display:flex;gap:14px;align-items:flex-start;margin-top:28px;padding:20px;border:1px solid var(--line);font-size:14px;color:#B7B3AC}
+.info .from i{font-style:normal;color:var(--gold);font-size:20px;line-height:1}
+.grid-specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin:clamp(48px,6vw,80px) 0 0}
+.grid-specs div{padding:22px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid-specs dt{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;font-variation-settings:"wdth" 118}
+.grid-specs dd{font-size:18px;font-weight:300;font-variation-settings:"wdth" 108}
+.desc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);padding:clamp(48px,6vw,80px) 0}
+.desc h2{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px;font-variation-settings:"wdth" 125}
+.desc p{color:#BDB9B2;font-size:17px;max-width:60ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:13px;padding:8px 14px;border:1px solid var(--line2);border-radius:999px;color:#C9C5BE}
+.similar{padding:clamp(56px,7vw,100px) 0 120px;border-top:1px solid var(--line)}
+.similar .h-md{margin-bottom:32px}
+.encarga{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:32px clamp(24px,3vw,40px);background:var(--bg2);border:1px solid var(--line);margin-bottom:clamp(56px,7vw,100px)}
+.encarga p{color:#BDB9B2;max-width:52ch}
+.encarga strong{display:block;font-weight:400;font-size:20px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-bottom:6px;font-variation-settings:"wdth" 118}
+.notfound{text-align:center;padding:140px 20px}
+.notfound p{color:var(--mute);margin:20px 0 36px}
+.sample-note{font-size:12px;color:var(--dim);margin-top:10px}
+@media (max-width:980px){
+  .detail{grid-template-columns:1fr}
+  .info{position:static}
+  .grid-specs{grid-template-columns:repeat(2,1fr)}
+  .desc{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .detail>.gal{margin:0 calc(var(--pad) * -1)}
+  .thumbs{padding:0 var(--pad)}
+  .thumbs button{width:84px}
+  .gal .nav-b{width:40px;height:40px}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.remove('no-js')</script>
+
+<header class="top" data-solid="1">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Luxury Cars Huelva, inicio"><b>LUXURY CARS</b><span>HUELVA</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="index.html#encargo">Encargos</a>
+      <a href="coches.html" aria-current="page">Stock</a>
+      <a href="index.html#preguntas">Preguntas</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+    <a class="tel num" href="tel:+34634814264" data-icon="tel">634 81 42 64</a>
+    <button class="menu-btn" aria-label="Menú" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<footer class="foot-site">
+  <div class="wrap">
+    <div><a class="logo" href="index.html"><b>LUXURY CARS</b><span>HUELVA</span></a><p style="margin-top:20px;max-width:36ch">Coches de alta gama por encargo y en stock.</p></div>
+    <div><h4>Web</h4><p><a href="index.html#encargo">Encargos</a></p><p><a href="coches.html">Stock</a></p><p><a href="index.html#preguntas">Preguntas</a></p></div>
+    <div><h4>Contacto</h4><p><a href="tel:+34634814264" class="num">634 81 42 64</a></p><p><a data-wa>WhatsApp</a></p><p><a href="mailto:luxurycarshuelva@gmail.com">luxurycarshuelva@gmail.com</a></p></div>
+    <div class="legal"><span>© 2026 LUXURY CARS HUELVA SL · NIF B88951322</span><a href="aviso-legal.html">Aviso legal y privacidad</a></div>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" data-icon="wa" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener"></a>
+
+<script src="stock.js"></script>
+<script src="site.js"></script>
+<script>
+const id = new URLSearchParams(location.search).get('id');
+const app = document.getElementById('app');
+const e = LCH.esc;
+let foto = 0;
+
+async function pintar() {
+  const c = id && await LCH.get(id);
+  if (!c || c.estado === 'oculto') {
+    app.innerHTML = `<div class="notfound"><h1 class="h-lg">Este coche <em>ya no está.</em></h1><p>Puede que se haya vendido. Mira el stock o pídenos uno igual.</p><a class="btn gold" href="coches.html">Ver el stock <span class="arr">→</span></a></div>`;
+    return;
+  }
+  const t = LCH.titulo(c);
+  const fotos = (c.fotos || []).length ? c.fotos : [];
+  foto = Math.min(foto, Math.max(0, fotos.length - 1));
+  document.title = `${t} ${c.anio || ''} · ${c.estado === 'vendido' ? 'Vendido' : LCH.eur(c.precio)} · Luxury Cars Huelva`;
+  const msg = `Hola, me interesa el ${t} ${c.version || ''} de ${c.anio || ''} (${LCH.eur(c.precio)}) que tenéis en la web.`.replace(/\s+/g, ' ');
+  document.getElementById('waFloat').href = LCH.wa(msg);
+  const vendido = c.estado === 'vendido';
+  const muestra = fotos.some(f => f.startsWith('img/'));
+  const specs = [['Año', c.anio], ['Kilómetros', c.km != null && LCH.num(c.km) + ' km'], ['Potencia', c.cv && c.cv + ' CV'], ['Combustible', c.combustible], ['Cambio', c.cambio], ['Color', c.color], ['Estado', LCH.ESTADOS[c.estado]]].filter(s => s[1]);
+
+  app.innerHTML = `
+    <nav class="crumbs" aria-label="Migas"><a href="index.html">Inicio</a><span>/</span><a href="coches.html">Stock</a><span>/</span>${e(t)}</nav>
+    <div class="detail">
+      <div class="gal">
+        <div class="main">
+          ${fotos.length ? `<img id="big" src="${e(fotos[foto])}" alt="${e(t)} ${c.anio || ''}, foto ${foto + 1}">` : ''}
+          ${fotos.length > 1 ? `<button class="nav-b prev" aria-label="Foto anterior">←</button><button class="nav-b next" aria-label="Foto siguiente">→</button><span class="idx num">${foto + 1} / ${fotos.length}</span>` : ''}
+        </div>
+        ${fotos.length > 1 ? `<div class="thumbs">${fotos.map((f, i) => `<button data-i="${i}" aria-current="${i === foto}" aria-label="Ver foto ${i + 1}"><img src="${e(f)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+        ${muestra ? '<p class="sample-note">Imágenes de muestra para la propuesta de diseño.</p>' : ''}
+      </div>
+      <aside class="info">
+        <p class="eyebrow">${e(c.marca)}</p>
+        <h1>${e(c.modelo)}</h1>
+        ${c.version ? `<p class="ver">${e(c.version)}</p>` : ''}
+        <div class="p"><b class="num">${vendido ? 'Vendido' : LCH.eur(c.precio)}</b>${vendido ? '' : `<span class="st ${c.estado}">${LCH.ESTADOS[c.estado]}</span>`}</div>
+        ${vendido ? '<p class="iva">Este coche ya tiene dueño. Podemos buscarte uno igual.</p>' : '<p class="iva">Precio final, matriculado en España.</p>'}
+        <div class="ctas">
+          ${vendido
+            ? `<a class="btn gold" href="index.html?modelo=${encodeURIComponent(t)}#encargo">Encargar uno igual <span class="arr">→</span></a>`
+            : `<a class="btn wa" href="${LCH.wa(msg)}" target="_blank" rel="noopener">${ICON.wa} Preguntar por WhatsApp</a>
+               <a class="btn" href="tel:+34634814264">${ICON.tel} Llamar · <span class="num">634 81 42 64</span></a>`}
+        </div>
+        ${vendido ? '' : '<div class="from"><i>◆</i><span>Te lo entregamos matriculado y listo para conducir.</span></div>'}
+      </aside>
+    </div>
+    <dl class="grid-specs num">${specs.map(([k, v]) => `<div><dt>${k}</dt><dd>${e(v)}</dd></div>`).join('')}</dl>
+    <div class="desc">
+      <div><h2>Sobre este coche</h2><p>${e(c.descripcion || 'Pregúntanos por WhatsApp y te contamos todo sobre este coche.')}</p></div>
+      ${(c.extras || []).length ? `<div><h2>Equipamiento destacado</h2><div class="tags">${c.extras.map(x => `<span>${e(x)}</span>`).join('')}</div></div>` : '<div></div>'}
+    </div>
+    <div class="encarga"><p><strong>¿Te gusta, pero lo quieres distinto?</strong>Otro color, otro año u otros extras: te lo buscamos.</p><a class="btn gold" href="index.html?modelo=${encodeURIComponent(t)}#encargo">Encargar uno así <span class="arr">→</span></a></div>
+  `;
+
+  // galería
+  const big = document.getElementById('big');
+  const ir = i => {
+    foto = (i + fotos.length) % fotos.length;
+    big.classList.add('fade');
+    setTimeout(() => { big.src = fotos[foto]; big.alt = `${t} ${c.anio || ''}, foto ${foto + 1}`; big.classList.remove('fade'); }, 180);
+    app.querySelectorAll('.thumbs button').forEach((b, j) => b.setAttribute('aria-current', j === foto));
+    const idx = app.querySelector('.idx'); if (idx) idx.textContent = `${foto + 1} / ${fotos.length}`;
+  };
+  app.querySelector('.prev')?.addEventListener('click', () => ir(foto - 1));
+  app.querySelector('.next')?.addEventListener('click', () => ir(foto + 1));
+  app.querySelectorAll('.thumbs button').forEach(b => b.addEventListener('click', () => ir(+b.dataset.i)));
+  let x0 = null;
+  big && big.parentElement.addEventListener('touchstart', ev => x0 = ev.touches[0].clientX, { passive: true });
+  big && big.parentElement.addEventListener('touchend', ev => { if (x0 == null) return; const d = ev.changedTouches[0].clientX - x0; if (Math.abs(d) > 40) ir(foto + (d < 0 ? 1 : -1)); x0 = null; });
+  document.onkeydown = ev => { if (fotos.length > 1 && ev.key === 'ArrowRight') ir(foto + 1); if (fotos.length > 1 && ev.key === 'ArrowLeft') ir(foto - 1); };
+
+  // parecidos
+  const otros = (await LCH.list()).filter(x => x.id !== c.id && x.estado !== 'vendido');
+  otros.sort((a, b) => (b.marca === c.marca) - (a.marca === c.marca) || Math.abs((a.precio || 0) - (c.precio || 0)) - Math.abs((b.precio || 0) - (c.precio || 0)));
+  if (otros.length) {
+    app.insertAdjacentHTML('beforeend', `<section class="similar"><h2 class="h-md">También <em>en stock</em></h2><div class="cars">${otros.slice(0, 3).map(carCard).join('')}</div></section>`);
+    reveal(app);
+  }
+
+  // datos para Google
+  document.getElementById('ld')?.remove();
+  const ld = { '@context': 'https://schema.org', '@type': 'Car', name: `${t} ${c.version || ''}`.trim(), brand: { '@type': 'Brand', name: c.marca }, model: c.modelo, vehicleModelDate: String(c.anio || ''), mileageFromOdometer: { '@type': 'QuantitativeValue', value: c.km, unitCode: 'KMT' }, fuelType: c.combustible, color: c.color, image: fotos.map(f => new URL(f, location.href).href), description: c.descripcion,
+    offers: { '@type': 'Offer', price: c.precio, priceCurrency: 'EUR', availability: vendido ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', seller: { '@type': 'AutoDealer', name: 'Luxury Cars Huelva', telephone: '+34634814264' } } };
+  const s = document.createElement('script'); s.type = 'application/ld+json'; s.id = 'ld'; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
+}
+pintar(); LCH.onChange(pintar);
+</script>
+</body>
+</html>

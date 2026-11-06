@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index, follow">
+<title>Coches en stock · Luxury Cars Huelva</title>
+<meta name="description" content="Coches de alta gama en stock en San Juan del Puerto (Huelva): Porsche, Mercedes-AMG, BMW M, Audi RS y más.">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.head{padding:clamp(56px,8vw,110px) 0 clamp(36px,4vw,56px)}
+.head .eyebrow{margin-bottom:22px}
+.head .lead{margin-top:24px}
+.bar{position:sticky;top:76px;z-index:20;background:rgba(10,10,11,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-block:1px solid var(--line);margin-bottom:32px}
+.bar .wrap{display:flex;align-items:center;gap:10px;height:68px;overflow-x:auto;scrollbar-width:none}
+.bar .wrap::-webkit-scrollbar{display:none}
+.chip{flex:none;height:38px;padding:0 16px;border:1px solid var(--line2);border-radius:999px;background:none;cursor:pointer;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#C9C5BE;font-variation-settings:"wdth" 112;transition:all .2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.sep{flex:none;width:1px;height:24px;background:var(--line2);margin:0 6px}
+.sort{flex:none;margin-left:auto;background:none;border:1px solid var(--line2);border-radius:999px;height:38px;padding:0 34px 0 16px;font-size:12px;letter-spacing:.1em;appearance:none;-webkit-appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--mute) 50%),linear-gradient(135deg,var(--mute) 50%,transparent 50%);background-position:calc(100% - 18px) 16px,calc(100% - 13px) 16px;background-size:5px 5px;background-repeat:no-repeat}
+.sort option{background:var(--bg2)}
+.count{font-size:13px;color:var(--mute);margin-bottom:18px}
+.ask{background:var(--bg2);display:flex;flex-direction:column;justify-content:center;gap:18px;padding:40px 32px;min-height:380px}
+.ask h3{font-weight:300;font-size:30px;text-transform:uppercase;letter-spacing:.03em;font-variation-settings:"wdth" 125;line-height:1.05}
+.ask h3 em{font-family:var(--serif);font-weight:300;text-transform:none;color:var(--gold2)}
+.ask p{color:#A9A59F}
+.ask .btn{align-self:flex-start}
+.empty{padding:80px 20px;text-align:center;color:var(--mute);background:var(--bg)}
+main{padding-bottom:120px}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.remove('no-js')</script>
+
+<header class="top" data-solid="1">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Luxury Cars Huelva, inicio"><b>LUXURY CARS</b><span>HUELVA</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="index.html#encargo">Encargos</a>
+      <a href="coches.html" aria-current="page">Stock</a>
+      <a href="index.html#preguntas">Preguntas</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+    <a class="tel num" href="tel:+34634814264" data-icon="tel">634 81 42 64</a>
+    <button class="menu-btn" aria-label="Menú" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap head">
+    <p class="eyebrow">Stock</p>
+    <h1 class="h-lg">Coches <em>en stock.</em></h1>
+    <p class="lead">Matriculados y listos para conducir. Se pueden ver con cita en San Juan del Puerto.</p>
+  </div>
+
+  <div class="bar">
+    <div class="wrap" id="filters" role="toolbar" aria-label="Filtrar coches"></div>
+  </div>
+
+  <div class="wrap">
+    <p class="count num" id="count" aria-live="polite"></p>
+    <div class="cars" id="list"></div>
+  </div>
+</main>
+
+<footer class="foot-site">
+  <div class="wrap">
+    <div><a class="logo" href="index.html"><b>LUXURY CARS</b><span>HUELVA</span></a><p style="margin-top:20px;max-width:36ch">Coches de alta gama por encargo y en stock.</p></div>
+    <div><h4>Web</h4><p><a href="index.html#encargo">Encargos</a></p><p><a href="coches.html">Stock</a></p><p><a href="index.html#preguntas">Preguntas</a></p></div>
+    <div><h4>Contacto</h4><p><a href="tel:+34634814264" class="num">634 81 42 64</a></p><p><a data-wa>WhatsApp</a></p><p><a href="mailto:luxurycarshuelva@gmail.com">luxurycarshuelva@gmail.com</a></p></div>
+    <div class="legal"><span>© 2026 LUXURY CARS HUELVA SL · NIF B88951322</span><a href="aviso-legal.html">Aviso legal y privacidad</a></div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa="Hola, estoy mirando vuestro stock en la web." data-icon="wa" aria-label="Escríbenos por WhatsApp"></a>
+
+<script src="stock.js"></script>
+<script src="site.js"></script>
+<script>
+const state = { marca: '', vendidos: false, orden: 'reciente' };
+let cars = [];
+
+function filtros() {
+  const marcas = [...new Set(cars.map(c => c.marca))].sort();
+  const box = document.getElementById('filters');
+  box.innerHTML =
+    `<button class="chip" data-marca="" aria-pressed="${!state.marca}">Todas</button>` +
+    marcas.map(m => `<button class="chip" data-marca="${LCH.esc(m)}" aria-pressed="${state.marca === m}">${LCH.esc(m)}</button>`).join('') +
+    `<span class="sep"></span><button class="chip" id="vend" aria-pressed="${state.vendidos}">Ver vendidos</button>` +
+    `<select class="sort" id="orden" aria-label="Ordenar">
+      <option value="reciente">Más recientes</option><option value="precio-asc">Precio: menor a mayor</option>
+      <option value="precio-desc">Precio: mayor a menor</option><option value="anio">Año: más nuevos</option><option value="km">Menos kilómetros</option></select>`;
+  box.querySelector('#orden').value = state.orden;
+  box.querySelectorAll('[data-marca]').forEach(b => b.onclick = () => { state.marca = b.dataset.marca; pintar(); });
+  box.querySelector('#vend').onclick = () => { state.vendidos = !state.vendidos; pintar(); };
+  box.querySelector('#orden').onchange = e => { state.orden = e.target.value; pintar(); };
+}
+
+function pintar() {
+  document.querySelector('.bar').hidden = !cars.length; document.getElementById('count').hidden = !cars.length;
+  filtros();
+  let l = cars.filter(c => (!state.marca || c.marca === state.marca) && (state.vendidos || c.estado !== 'vendido'));
+  const by = { 'precio-asc': (a, b) => (a.precio || 1e9) - (b.precio || 1e9), 'precio-desc': (a, b) => (b.precio || 0) - (a.precio || 0), anio: (a, b) => (b.anio || 0) - (a.anio || 0), km: (a, b) => (a.km || 0) - (b.km || 0) }[state.orden];
+  if (by) l = [...l].sort(by);
+  document.getElementById('count').textContent = l.length === 1 ? '1 coche' : `${l.length} coches`;
+  const ask = `<div class="ask rv"><p class="eyebrow">Encargos</p><h3>¿No está el que <em>buscas?</em></h3><p>Dinos el modelo, el año y el presupuesto, y te lo buscamos.</p><a class="btn gold" href="index.html#encargo">Encargar un coche <span class="arr">→</span></a></div>`;
+  const box = document.getElementById('list');
+  box.innerHTML = (l.length ? l.map(carCard).join('') : `<div class="empty">${cars.length ? 'Ahora mismo no hay ningún ' + LCH.esc(state.marca) + ' en stock.' : 'Estamos preparando el stock. Muy pronto verás aquí los coches disponibles.'}</div>`) + ask;
+  reveal(box);
+}
+
+async function cargar() { cars = await LCH.list(); pintar(); }
+cargar(); LCH.onChange(cargar);
+</script>
+</body>
+</html>

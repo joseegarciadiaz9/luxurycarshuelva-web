@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index, follow">
+<title>Luxury Cars Huelva · Coches premium por encargo y en stock</title>
+<meta name="description" content="Te buscamos el coche de alta gama que quieres y te lo entregamos matriculado, listo para conducir. Coches premium por encargo en San Juan del Puerto (Huelva).">
+<meta property="og:title" content="Luxury Cars Huelva · El coche que buscas, te lo encontramos">
+<meta property="og:description" content="Coches premium por encargo y en stock. Huelva y Sevilla.">
+<meta property="og:image" content="https://luxurycarshuelva.com/img/og.jpg">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* portada: vídeo de fondo (el camión llega, baja la rampa y sale el coche) */
+.hero{position:relative;height:100vh;height:100svh;min-height:620px;margin-top:-76px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;background:#060708}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 50%;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(10,10,11,.9) 0%,rgba(10,10,11,.55) 30%,rgba(10,10,11,0) 58%),linear-gradient(0deg,var(--bg) 0%,rgba(10,10,11,0) 26%),linear-gradient(180deg,rgba(10,10,11,.7) 0%,rgba(10,10,11,0) 20%)}
+.hero .wrap{width:100%;padding-bottom:36px}
+.hero .eyebrow{margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.hero .eyebrow::before{content:"";width:36px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(40px,5.4vw,88px);max-width:11ch}
+@media (min-width:761px){.hero .bg{width:126%;left:0}}
+.hero .lead{margin:26px 0 36px;max-width:46ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero .ctas .count{color:var(--mute);margin-left:4px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--line)}
+.facts div{padding:20px 24px 0 0;font-size:13px;color:#B7B3AC;display:flex;gap:14px;align-items:baseline}
+.facts b{font-weight:400;color:var(--gold);font-size:11px;letter-spacing:.2em;font-variation-settings:"wdth" 125}
+.hero .eyebrow,.hero h1,.hero .lead,.hero .ctas,.facts{animation:up 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero .eyebrow{animation-delay:.2s}.hero h1{animation-delay:.35s}.hero .lead{animation-delay:.5s}.hero .ctas{animation-delay:.65s}.facts{animation-delay:.8s}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.vctl{position:absolute;right:var(--pad);top:calc(76px + 24px);z-index:3;display:flex;align-items:center;gap:10px;height:36px;padding:0 14px 0 12px;border:1px solid var(--line2);border-radius:999px;background:rgba(10,10,11,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#C9C5BE;font-variation-settings:"wdth" 118;transition:border-color .3s,color .3s}
+.vctl:hover{border-color:var(--ink);color:var(--ink)}
+.vctl svg{width:12px;height:12px}
+.tagline{position:absolute;right:var(--pad);bottom:18px;z-index:3;font-size:10px;letter-spacing:.06em;color:rgba(237,234,228,.4)}
+
+section{position:relative}
+.sec{padding:clamp(88px,11vw,160px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:clamp(40px,5vw,72px);flex-wrap:wrap}
+.sec-head .eyebrow{margin-bottom:22px}
+
+/* encargos */
+.encargo{border-top:1px solid var(--line)}
+.enc-grid>*,.faq-grid>*{min-width:0}
+.enc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,96px);align-items:start}
+.steps{list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:72px 1fr;gap:8px 20px;padding:30px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:"0" counter(s);grid-row:span 2;font-size:13px;letter-spacing:.2em;color:var(--gold);font-variation-settings:"wdth" 125;padding-top:5px}
+.steps h3{font-weight:400;font-size:20px;letter-spacing:.06em;text-transform:uppercase;font-variation-settings:"wdth" 118}
+.steps p{color:#A9A59F;max-width:52ch}
+.form{background:var(--bg2);border:1px solid var(--line);padding:clamp(26px,3.4vw,44px);position:sticky;top:100px}
+.form h3{font-weight:300;font-size:26px;text-transform:uppercase;letter-spacing:.04em;font-variation-settings:"wdth" 125;margin-bottom:6px}
+.form>p{color:var(--mute);font-size:14px;margin-bottom:26px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fgrid .full{grid-column:1/-1}
+.f label{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-bottom:8px;font-variation-settings:"wdth" 118}
+.f input,.f select,.f textarea{width:100%;background:var(--bg);border:1px solid var(--line2);border-radius:var(--r);height:50px;padding:0 14px;font-size:15px;transition:border-color .2s;appearance:none;-webkit-appearance:none}
+.f select{background-image:linear-gradient(45deg,transparent 50%,var(--mute) 50%),linear-gradient(135deg,var(--mute) 50%,transparent 50%);background-position:calc(100% - 20px) 22px,calc(100% - 15px) 22px;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
+.f textarea{height:84px;padding:12px 14px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--gold)}
+.f.bad input{border-color:#C96A5A}
+.f .err{display:none;font-size:12px;color:#E28C7C;margin-top:6px}
+.f.bad .err{display:block}
+.form .btn{width:100%;margin-top:22px}
+.form .note{font-size:12px;color:var(--dim);margin-top:14px;text-align:center}
+
+
+/* stock */
+.more{display:flex;justify-content:center;margin-top:48px}
+.more[hidden],.sec-head[hidden]{display:none}
+.soon{grid-column:1/-1;border:1px solid var(--line);padding:clamp(36px,5vw,64px);text-align:center}
+.soon h3{font-weight:300;font-size:clamp(26px,3vw,38px);text-transform:uppercase;letter-spacing:.04em;font-variation-settings:"wdth" 125;margin:18px 0 12px}
+.soon h3 em{font-family:var(--serif);text-transform:none;letter-spacing:0;color:var(--gold)}
+.soon p:not(.eyebrow){color:var(--mute);margin-bottom:28px}
+
+/* por qué */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.why div{background:var(--bg);padding:clamp(28px,3vw,44px)}
+.why b{display:block;font-family:var(--serif);font-style:italic;font-weight:300;font-size:44px;color:var(--gold);line-height:1;margin-bottom:28px}
+.why h3{font-weight:400;font-size:18px;letter-spacing:.08em;text-transform:uppercase;font-variation-settings:"wdth" 118;margin-bottom:12px}
+.why p{color:#A9A59F;font-size:15px}
+
+/* preguntas */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,96px)}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:17px;letter-spacing:.02em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:12px;height:12px;flex:none;background:linear-gradient(var(--gold),var(--gold)) center/12px 1px no-repeat,linear-gradient(var(--gold),var(--gold)) center/1px 12px no-repeat;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:#A9A59F;padding:0 40px 28px 0;max-width:62ch}
+
+/* contacto */
+.contact{border-top:1px solid var(--line);text-align:center;overflow:hidden}
+.contact .h-xl{margin:26px auto 30px;max-width:16ch}
+.contact .lead{margin:0 auto 44px}
+.contact .ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+.contact .meta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 40px;margin-top:56px;color:var(--mute);font-size:13px;letter-spacing:.04em}
+.contact .meta span{display:flex;gap:10px;align-items:center}
+.contact .meta span::before{content:"";width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+.glow{position:absolute;left:50%;top:60%;width:900px;height:500px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(205,174,120,.13),transparent);pointer-events:none;z-index:-1}
+
+@media (max-width:980px){
+  .enc-grid,.faq-grid{grid-template-columns:1fr}
+  .form{position:static}
+  .why{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .hero{height:auto;min-height:0}
+  .hero .bg{bottom:auto;height:66svh;object-position:50% 50%;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 60%,transparent 100%)}
+  .hero::before{background:linear-gradient(180deg,rgba(10,10,11,.7) 0%,rgba(10,10,11,0) 16%)}
+  .hero .wrap{padding-top:54svh}
+  .hero .lead{margin:18px 0 26px;font-size:15px}
+  .hero .ctas .btn{flex:1 1 100%}
+  .facts{grid-template-columns:1fr;margin-top:36px}
+  .facts div{padding:14px 0;border-bottom:1px solid var(--line)}
+  .vctl{top:calc(76px + 12px);height:32px}
+  .tagline{bottom:auto;top:calc(76px + 22px);left:var(--pad);right:auto}
+  body.on-hero .wa-float{opacity:0;pointer-events:none}
+  .wa-float{transition:transform .3s,opacity .3s}
+  .fgrid{grid-template-columns:1fr}
+  .steps li{grid-template-columns:48px 1fr}
+  .contact .ctas .btn{flex:1 1 100%}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoDealer","name":"Luxury Cars Huelva","legalName":"LUXURY CARS HUELVA SL","taxID":"B88951322","url":"https://luxurycarshuelva.com/","telephone":"+34634814264","email":"luxurycarshuelva@gmail.com","image":"https://luxurycarshuelva.com/img/og.jpg","address":{"@type":"PostalAddress","addressLocality":"San Juan del Puerto","addressRegion":"Huelva","postalCode":"21610","addressCountry":"ES"},"areaServed":[{"@type":"AdministrativeArea","name":"Provincia de Huelva"},{"@type":"AdministrativeArea","name":"Provincia de Sevilla"}],"description":"Coches de alta gama por encargo y venta de coches premium en stock."}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.remove('no-js')</script>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Luxury Cars Huelva, inicio"><b>LUXURY CARS</b><span>HUELVA</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#encargo">Encargos</a>
+      <a href="coches.html">Stock</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="tel num" href="tel:+34634814264" data-icon="tel">634 81 42 64</a>
+    <button class="menu-btn" aria-label="Menú" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <video class="bg" id="heroVideo" muted playsinline preload="auto" aria-hidden="true"></video>
+  <div class="wrap">
+    <p class="eyebrow">Coches premium por encargo · Huelva</p>
+    <h1 class="h-xl">El coche que buscas, <em>te lo encontramos.</em></h1>
+    <p class="lead">Nos dices qué modelo quieres y te lo buscamos. Te lo entregamos matriculado y listo para conducir.</p>
+    <div class="ctas">
+      <a class="btn gold" href="#encargo">Encargar un coche <span class="arr">→</span></a>
+      <a class="btn" href="coches.html">Ver stock <span class="count num" id="heroCount"></span></a>
+    </div>
+    <div class="facts">
+      <div><b>01</b>Encargos a tu medida</div>
+      <div><b>02</b>Opciones con fotos antes de decidir</div>
+      <div><b>03</b>Atención con cita · Huelva y Sevilla</div>
+    </div>
+  </div>
+  <button class="vctl" id="vctl" type="button" hidden></button>
+</section>
+
+<section class="sec encargo" id="encargo">
+  <div class="wrap enc-grid">
+    <div>
+      <p class="eyebrow rv">Encargos</p>
+      <h2 class="h-lg rv" style="margin:22px 0 28px">Tú eliges el coche. <em>Nosotros lo buscamos.</em></h2>
+      <p class="lead rv" style="margin-bottom:48px">El coche exacto que quieres, con el motor, el color y los extras que buscas, aunque no lo encuentres en ningún concesionario.</p>
+      <ol class="steps">
+        <li class="rv"><h3>Nos cuentas qué buscas</h3><p>Modelo, año, kilómetros, color, extras y presupuesto. Cuanto más concreto, mejor.</p></li>
+        <li class="rv"><h3>Te lo buscamos</h3><p>Movemos nuestros contactos hasta dar con él y te enseñamos las opciones que encajan, con fotos.</p></li>
+        <li class="rv"><h3>Te lo entregamos listo</h3><p>Te lo entregamos matriculado y listo para conducir. Tú solo recoges las llaves.</p></li>
+      </ol>
+    </div>
+
+    <form class="form rv" id="encForm" novalidate>
+      <h3>¿Qué coche buscas?</h3>
+      <p>Te respondemos por WhatsApp.</p>
+      <div class="fgrid">
+        <div class="f full"><label for="e-modelo">Marca y modelo *</label><input id="e-modelo" name="modelo" placeholder="Ej.: Porsche 911 Carrera S" required autocomplete="off"><div class="err">Dinos al menos la marca y el modelo.</div></div>
+        <div class="f"><label for="e-anio">Año desde</label><select id="e-anio" name="anio"><option value="">Indiferente</option></select></div>
+        <div class="f"><label for="e-km">Kilómetros máx.</label><select id="e-km" name="km"><option value="">Indiferente</option><option>20.000 km</option><option>50.000 km</option><option>80.000 km</option><option>120.000 km</option></select></div>
+        <div class="f"><label for="e-pres">Presupuesto</label><select id="e-pres" name="presupuesto"><option value="">Sin decidir</option><option>Hasta 40.000 €</option><option>40.000 – 70.000 €</option><option>70.000 – 100.000 €</option><option>100.000 – 150.000 €</option><option>Más de 150.000 €</option></select></div>
+        <div class="f"><label for="e-comb">Combustible</label><select id="e-comb" name="combustible"><option value="">Indiferente</option><option>Gasolina</option><option>Diésel</option><option>Híbrido</option><option>Híbrido enchufable</option><option>Eléctrico</option></select></div>
+        <div class="f full"><label for="e-extras">Color o extras imprescindibles</label><input id="e-extras" name="extras" placeholder="Ej.: gris, techo, asientos deportivos" autocomplete="off"></div>
+        <div class="f"><label for="e-nombre">Tu nombre *</label><input id="e-nombre" name="nombre" required autocomplete="given-name"><div class="err">¿Cómo te llamas?</div></div>
+        <div class="f"><label for="e-tel">Teléfono *</label><input id="e-tel" name="tel" type="tel" inputmode="tel" required autocomplete="tel" placeholder="600 000 000"><div class="err">Revisa el número.</div></div>
+      </div>
+      <button class="btn wa" type="submit" data-icon="wa">Enviar por WhatsApp</button>
+      <p class="note">Se abre WhatsApp con tu encargo ya escrito. La web no guarda tus datos.</p>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="stock">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow rv">Stock</p><h2 class="h-lg rv" style="margin-top:22px">Disponibles <em>ahora.</em></h2></div>
+      <p class="lead rv" style="max-width:40ch">Coches que tenemos y puedes ver con cita. Si no está el tuyo, te lo buscamos.</p>
+    </div>
+    <div class="cars" id="featured"></div>
+    <div class="more"><a class="btn" href="coches.html">Ver todo el stock <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<section class="sec" id="preguntas" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div><p class="eyebrow rv">Preguntas</p><h2 class="h-lg rv" style="margin-top:22px">Lo que <em>nos suelen</em> preguntar.</h2></div>
+    <div class="faq">
+      <details class="rv"><summary>¿Qué coches podéis buscar?</summary><p>Coches de alta gama y premium. Dinos la marca, el modelo, el año, los kilómetros y tu presupuesto, y te buscamos opciones que encajen.</p></details>
+      <details class="rv"><summary>¿Puedo ver el coche antes de decidir?</summary><p>Sí. Te enseñamos fotos de cada opción antes de que elijas.</p></details>
+      <details class="rv"><summary>¿Dónde estáis?</summary><p>En San Juan del Puerto (Huelva). Atendemos con cita previa y nos movemos por Huelva, Sevilla y alrededores.</p></details>
+      <details class="rv"><summary>¿Cómo os contacto?</summary><p>Por WhatsApp o llamando al 634 81 42 64, o por correo a luxurycarshuelva@gmail.com. También puedes rellenar el formulario de encargo y se abre WhatsApp con tu mensaje ya escrito.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="contacto">
+  <div class="glow"></div>
+  <div class="wrap">
+    <p class="eyebrow rv">Contacto</p>
+    <h2 class="h-xl rv">Hablemos de tu <em>próximo coche.</em></h2>
+    <p class="lead rv">Escríbenos o llámanos. Atendemos con cita previa en San Juan del Puerto, y nos movemos por Huelva, Sevilla y alrededores.</p>
+    <div class="ctas rv">
+      <a class="btn wa" data-wa="Hola, os escribo desde la web de Luxury Cars Huelva." data-icon="wa">WhatsApp</a>
+      <a class="btn" href="tel:+34634814264" data-icon="tel"><span class="num">634 81 42 64</span></a>
+    </div>
+    <div class="meta rv"><span>San Juan del Puerto · Huelva</span><span>Solo con cita previa</span><span><a href="mailto:luxurycarshuelva@gmail.com">luxurycarshuelva@gmail.com</a></span></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot-site">
+  <div class="wrap">
+    <div><a class="logo" href="#inicio"><b>LUXURY CARS</b><span>HUELVA</span></a><p style="margin-top:20px;max-width:36ch">Coches de alta gama por encargo y en stock.</p></div>
+    <div><h4>Web</h4><p><a href="#encargo">Encargos</a></p><p><a href="coches.html">Stock</a></p><p><a href="#preguntas">Preguntas</a></p></div>
+    <div><h4>Contacto</h4><p><a href="tel:+34634814264" class="num">634 81 42 64</a></p><p><a data-wa>WhatsApp</a></p><p><a href="mailto:luxurycarshuelva@gmail.com">luxurycarshuelva@gmail.com</a></p></div>
+    <div class="legal"><span>© 2026 LUXURY CARS HUELVA SL · NIF B88951322</span><a href="aviso-legal.html">Aviso legal y privacidad</a></div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa="Hola, os escribo desde la web de Luxury Cars Huelva." data-icon="wa" aria-label="Escríbenos por WhatsApp"></a>
+
+<script src="stock.js"></script>
+<script src="site.js"></script>
+<script>
+// Portada: coches destacados y contador del stock
+async function pintar() {
+  const all = await LCH.list();
+  const disp = all.filter(c => c.estado !== 'vendido');
+  document.getElementById('heroCount').textContent = '· ' + disp.length;
+  const dest = disp.filter(c => c.destacado).concat(disp.filter(c => !c.destacado));
+  const box = document.getElementById('featured');
+  document.getElementById('heroCount').hidden = !disp.length;
+  document.querySelector('#stock .more').hidden = !disp.length;
+  document.querySelector('#stock .sec-head').hidden = !disp.length;
+  box.innerHTML = disp.length ? dest.slice(0, 6).map(carCard).join('')
+    : '<div class="soon rv"><p class="eyebrow">Próximamente</p><h3>Estamos preparando <em>el stock.</em></h3><p>Mientras tanto, dinos qué coche buscas y te lo encontramos.</p><a class="btn gold" href="#encargo">Encargar un coche <span class="arr">→</span></a></div>';
+  reveal(box);
+}
+pintar(); LCH.onChange(pintar);
+
+// Formulario de encargo: se manda por WhatsApp
+const f = document.getElementById('encForm');
+const anio = f.anio, y = new Date().getFullYear();
+for (let a = y; a >= y - 12; a--) anio.insertAdjacentHTML('beforeend', `<option>${a}</option>`);
+const pre = new URLSearchParams(location.search).get('modelo');
+if (pre) f.modelo.value = pre;
+f.addEventListener('submit', e => {
+  e.preventDefault();
+  const tel = f.tel.value.replace(/[\s.-]/g, '');
+  const checks = [[f.modelo, f.modelo.value.trim().length >= 3], [f.nombre, f.nombre.value.trim().length >= 2], [f.tel, /^(\+?34)?[6789]\d{8}$/.test(tel)]];
+  checks.forEach(([el, ok]) => el.closest('.f').classList.toggle('bad', !ok));
+  const bad = checks.find(([, ok]) => !ok);
+  if (bad) { bad[0].focus(); return; }
+  const v = n => f[n].value.trim();
+  const lineas = [
+    `Hola, soy ${v('nombre')}. Quiero encargar un coche:`,
+    `• Modelo: ${v('modelo')}`,
+    v('anio') && `• Año desde: ${v('anio')}`,
+    v('km') && `• Kilómetros máx.: ${v('km')}`,
+    v('combustible') && `• Combustible: ${v('combustible')}`,
+    v('presupuesto') && `• Presupuesto: ${v('presupuesto')}`,
+    v('extras') && `• Color / extras: ${v('extras')}`,
+    `Mi teléfono: ${v('tel')}`,
+  ].filter(Boolean);
+  window.open(LCH.wa(lineas.join('\n')), '_blank', 'noopener');
+});
+f.querySelectorAll('input').forEach(i => i.addEventListener('input', () => i.closest('.f').classList.remove('bad')));
+
+// Portada: el vídeo se reproduce una vez de fondo y se queda en el coche
+(() => {
+  const v = document.getElementById('heroVideo'), b = document.getElementById('vctl');
+  const movil = innerWidth < 760, base = movil ? 'video/portada-movil' : 'video/portada';
+  const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ICO_PAUSA = '<svg viewBox="0 0 12 12" fill="currentColor"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg>';
+  const ICO_PLAY = '<svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l9 5-9 5z"/></svg>';
+  const ICO_OTRA = '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 6a4 4 0 1 1-1.2-2.8M10 1.5V4H7.5"/></svg>';
+  const boton = (ico, txt, label) => { b.innerHTML = ico + txt; b.setAttribute('aria-label', label); b.hidden = false; };
+  if (quieto) { v.poster = base + '-final.jpg'; return; }
+  v.poster = base + '-inicio.jpg';
+  v.src = base + '.mp4';
+  const pinta = () => v.ended ? boton(ICO_OTRA, 'Ver de nuevo', 'Ver el vídeo de nuevo') : v.paused ? boton(ICO_PLAY, 'Reproducir', 'Reproducir el vídeo') : boton(ICO_PAUSA, 'Pausa', 'Pausar el vídeo');
+  ['play', 'pause', 'ended'].forEach(t => v.addEventListener(t, pinta));
+  b.addEventListener('click', () => { if (v.ended) v.currentTime = 0; v.paused ? v.play() : v.pause(); });
+  v.play().catch(() => { v.poster = base + '-final.jpg'; pinta(); });
+  // En el móvil se esconde el botón de WhatsApp mientras se ve la portada, para que no tape los botones
+  new IntersectionObserver(([e]) => document.body.classList.toggle('on-hero', e.isIntersecting), { threshold: .35 }).observe(document.getElementById('inicio'));
+})();
+</script>
+</body>
+</html>
